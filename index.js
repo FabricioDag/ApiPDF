@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = 3002; // Porta da API
+const PORT = process.env.PORT || 3002; // Porta da API
 
 // Endpoint para servir os arquivos PDF armazenados na pasta 'uploads'
 app.use('/files', express.static(path.join(__dirname, 'uploads')));
